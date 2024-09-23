@@ -1,0 +1,203 @@
+/* Импорт шрифтов Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap');
+
+/* Общие стили */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1b3c2d;
+    color: #eaeaea;
+    overflow-y: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Центральный блок (высокий z-index) */
+.page-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #2e593d;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 10; /* Высокий z-index, чтобы блок был выше змей */
+    position: relative; /* Задаем относительное позиционирование */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; /* Уменьшаем отступ между блоками */
+}
+
+/* Левая сторона (фото и навыки) */
+.left-side {
+    flex: 0 0 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Уменьшаем отступ между фотографией и навыками */
+    align-items: center;
+}
+
+.profile-photo {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.skills {
+    width: 100%;
+}
+
+/* Названия навыков */
+.skill {
+    font-size: 1em; /* Размер текста навыка */
+    color: #eaeaea;
+    margin-bottom: 5px; /* Уменьшаем отступы между навыками */
+    display: flex;
+    flex-direction: column; /* Прогресс-бары будут под названием навыков */
+}
+
+/* Прогресс-бары */
+.progress-bar {
+    position: relative;
+    background: #3a4b3f; /* Темно-зеленый фон прогресс-бара */
+    height: 14px; /* Уменьшенная высота прогресс-бара */
+    width: 85%; /* Меньшая ширина прогресс-бара */
+    border: 2px solid #5a6a5f; /* Более темный контур прогресс-бара */
+    border-radius: 8px; /* Закругленные углы */
+    margin-top: 5px; /* Уменьшаем отступ от названия навыка */
+    overflow: hidden;
+}
+
+.progress-bar-inner {
+    height: 100%;
+    background: linear-gradient(to right, #4f7164, #627b6f); /* Мягкий градиент заполнения */
+    border-radius: 6px; /* Закругленные углы внутри прогресс-бара */
+    width: 0; /* Начальная ширина будет задана динамически */
+    position: relative;
+    transition: width 0.5s ease; /* Анимация плавного заполнения */
+}
+
+.progress-bar span {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8em; /* Уменьшаем размер шрифта внутри прогресс-бара */
+    font-weight: bold;
+    line-height: 14px; /* Выравнивание по центру по вертикали */
+    color: #eaeaea; /* Светлый текст внутри бара */
+    z-index: 1; /* Помещаем текст поверх бара */
+}
+
+/* Правая сторона (Обо мне, Образование, Качества, Работа) */
+.right-side {
+    flex: 0 0 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Уменьшаем отступ между блоками */
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900; /* Шрифт Montserrat Black для заголовков */
+    font-size: 1.5em; /* Уменьшаем размер заголовков */
+    color: #99cc99; /* Светло-зеленый для заголовков */
+    margin-bottom: 5px; /* Уменьшаем отступ под заголовком */
+}
+
+.about-me p, .education-list li, .work p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; /* Шрифт Montserrat Regular для текста */
+    font-size: 0.9em; /* Уменьшаем текст чуть больше */
+    line-height: 1.4;
+    color: #eaeaea;
+}
+
+.qualities-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Уменьшаем отступ между тегами качеств */
+}
+
+.qualities-tags span {
+    background-color: #4d7b5f; /* Темно-зеленый для качеств */
+    border-radius: 20px;
+    padding: 5px 10px; /* Уменьшаем внутренние отступы у тегов */
+    font-size: 0.9em;
+    color: #eaeaea;
+    border: 1px solid #99cc99;
+}
+
+/* Подвал */
+.footer-container {
+    background-color: #1b3c2d; /* Темно-зеленый для футера */
+    color: #eaeaea;
+    text-align: center;
+    padding: 20px; /* Отступы в подвале */
+    margin-top: auto; /* Это прижмет подвал к низу */
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 0.9em; /* Уменьшаем размер шрифта */
+    line-height: 1.4;
+}
+
+.footer-content .social-icons {
+    margin-top: 10px; /* Уменьшаем отступ над иконками соцсетей */
+}
+
+.footer-content .social-icons a {
+    margin: 0 8px;
+    display: inline-block;
+}
+
+.footer-content .social-icons img {
+    width: 25px;
+    height: 25px;
+    filter: brightness(0) invert(1);
+}
+
+/* Змеи (низкий z-index) */
+.snake-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0; /* Низкий z-index, чтобы змеи были под центральным блоком */
+}
+
+.snake-segment {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffffff, #4caf50); /* Градиент от белого к зелёному */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Лёгкая тень для объёма */
+    z-index: 0; /* Убедимся, что змеи находятся ниже центрального блока */
+    transition: transform 0.2s linear, background 0.5s ease-in-out;
+}
+
+/* Эффект пульсации при движении */
+.snake-segment:hover {
+    transform: scale(1.05); /* Лёгкое увеличение при наведении */
+    background: linear-gradient(135deg, #ffffff, #66bb6a); /* Слегка меняем оттенок при наведении */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Усиление тени при наведении */
+}
+
+/* Адаптация для мобильных устройств */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-side, .right-side {
+        flex: 100%;
+    }
+}

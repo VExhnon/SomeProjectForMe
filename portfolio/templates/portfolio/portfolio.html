@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+</head>
+<body>
+    <div class="snake-container">
+        <!-- Здесь будут добавлены змеи через JavaScript -->
+    </div>
+
+
+    <div class="page-wrapper">
+        <div class="container">
+            <!-- Левая часть (фото и навыки) -->
+            <div class="left-side">
+                <img src="{% static 'portfolio/profile.jpg' %}" alt="Profile Photo" class="profile-photo">
+
+                <!-- Навыки -->
+                <div class="skills">
+                    <h2>/ Навыки</h2>
+
+                    <div class="skill">
+                        Python
+                        <div class="progress-bar">
+                            <div class="progress-bar-inner" style="width: 90%;"></div>
+                            <span>90%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        HTML/CSS
+                        <div class="progress-bar">
+                            <div class="progress-bar-inner" style="width: 65%;"></div>
+                            <span>65%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        С++/C#
+                        <div class="progress-bar">
+                            <div class="progress-bar-inner" style="width: 40%;"></div>
+                            <span>40%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        Git
+                        <div class="progress-bar">
+                            <div class="progress-bar-inner" style="width: 60%;"></div>
+                            <span>60%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        Docker
+                        <div class="progress-bar">
+                            <div class="progress-bar-inner" style="width: 35%;"></div>
+                            <span>35%</span>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        Django
+                        <div class="progress-bar">
+                            <div class="progress-bar-inner" style="width: 30%;"></div>
+                            <span>30%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая часть (Обо мне, Образование, Качества, Работа) -->
+            <div class="right-side">
+                <!-- Обо мне -->
+                <div class="about-me">
+                    <h2>/ Обо мне</h2>
+                    <p>Имя: Илья<br>Возраст: 22 год<br>Дата рождения: 12.08.2002<br>Местоположение: Россия, Севастополь<br>Знание английского: B2-C1(Документацию читаю)</p>
+                </div>
+
+                <!-- Образование -->
+                <div class="education">
+                    <h2>/ Образование</h2>
+                    <ul class="education-list">
+                        <li>Кубанский государственный университет</li>
+                        <li>2019 - 2023: Бакалавриат. Факультет компьютерных технологий и прикладной математики</li>
+                        <li>Направление фундаментальная информатика и информационные технологии</li>
+                    </ul>
+                </div>
+
+                <!-- Мои качества -->
+                <div class="qualities">
+                    <h2>/ Мои качества</h2>
+                    <div class="qualities-tags">
+                        <span>Ответственность</span>
+                        <span>Коммуникабельность</span>
+                        <span>Гибкость</span>
+                        <span>Самостоятельность</span>
+                        <span>Устойчив к критике</span>
+                        <span>Целеустремлённость</span>
+                    </div>
+                </div>
+
+                <!-- Работа -->
+                <div class="work">
+                    <h2>/ Работа</h2>
+                    <p>Июнь 2022 — Ноябрь 2022 МегаФон</p>
+                    <p>Инженер-программист поддержи непрерывности платформ. Занимался разработкой приложения для внутреннего пользования отдела.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подвал с контактной информацией -->
+    <footer class="footer-container">
+    <div class="footer-content">
+        <p>Телефон: +7 (962) 852 27-52<br>Email: ilia.gapchuck@mail.ru</p>
+        <div class="social-icons">
+            <a href="https://t.me/ylyau"><img src="{% static 'portfolio/telegram-icon.png' %}" alt="Telegram"></a>
+            <a href="https://vk.com/vexhnon"><img src="{% static 'portfolio/vk-icon.png' %}" alt="VK"></a>
+            <a href="https://github.com/VExhnon"><img src="{% static 'portfolio/github-icon.png' %}" alt="GitHub"></a>
+        </div>
+    </div>
+    </footer>
+
+     <!-- Подключаем скрипт с логикой змей -->
+    <script src="{% static 'portfolio/snakes.js' %}"></script>
+</body>
+</html>
